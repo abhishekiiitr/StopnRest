@@ -1,0 +1,32 @@
+.dashboard-container {
+    position: relative;
+    background-image: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=1244&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fA%3D%3D');
+    background-blend-mode: multiply;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    padding: 10px;
+    margin-top: 0;
+    z-index: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.dashboard-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 70%;
+    background-color: rgba(255, 255, 255, 0.20); /* White with transparency */
+    z-index: -1; /* Layer it behind other content */
+}
+
+
+h1, h2, app-search, app-place, app-footer {
+    position: relative;
+    z-index: 2; /* Ensure all components are above the transparent layer */
+}

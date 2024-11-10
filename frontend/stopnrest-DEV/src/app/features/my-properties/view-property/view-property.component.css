@@ -1,0 +1,215 @@
+.view-properties-container {
+  max-width: 900px; /* Increased max width for a broader layout */
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Softer shadow for a modern look */
+}
+
+.view-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.hotel-id {
+  font-weight: bold;
+  color: #333;
+  color: #02412e;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.hotel-name {
+  font-size: 26px;
+  color: #0d6efd; /* Modern, blue color for the hotel name */
+  margin-bottom: 15px;
+}
+
+.hotel-location,
+.hotel-description {
+  color: #6c757d; /* Subtle grey for supporting text */
+}
+
+.room-type {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.room-category {
+  color: #17a2b8; /* Stylish teal for room category */
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.edit-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: #495057;
+  margin-bottom: 8px;
+  display: block;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 95%;
+  padding: 12px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #f8f9fa;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: #0d6efd;
+  background-color: #ffffff;
+  outline: none;
+}
+
+/* Button Container */
+.button-container {
+  display: flex;
+  justify-content:flex-end;
+  gap: 12px;
+  align-items: center;
+  margin-top: 15px;
+}
+
+/* Button Styling */
+.btn-update,
+.btn-discard {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: background-color 0.3s ease, transform 0.2s;
+  width: 120px;
+  cursor: pointer;
+}
+
+.btn-update {
+  background-color: #28a745;
+  color: white;
+  border: none;
+}
+
+.btn-update:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+.btn-discard {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+}
+
+.btn-discard:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
+}
+
+
+/* Edit and back button */
+button {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Edit Button */
+.edit-button {
+  background-color: #007bff;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.edit-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Discard Button */
+.btn-discard {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-discard:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
+}
+
+/* Update Button */
+.btn-update {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-update:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+/* Back Button (with arrow) */
+.back-button {
+  background-color: transparent;
+  color: #007bff;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+}
+
+.back-button i {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.back-button:hover {
+  color: #0056b3;
+  transform: translateX(-3px); /* Move arrow left slightly on hover */
+}
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .view-properties-container {
+    margin: 40px 20px;
+    padding: 20px;
+  }
+
+  .hotel-name {
+    font-size: 22px;
+  }
+
+  input[type="text"], input[type="number"] {
+    font-size: 14px;
+  }
+
+  .btn-update, .btn-discard {
+    font-size: 14px;
+    width: 100px; /* Reduced width for smaller screens */
+  }
+  .edit-button, .btn-discard, .btn-update {
+    width: 40%; /* Full width for smaller screens */
+    margin-bottom: 10px; /* Space between buttons */
+  }
+}

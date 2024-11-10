@@ -1,0 +1,118 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  height: auto;
+  overflow-y: auto;
+  background-color: #101010;
+}
+
+html, body {
+  height: 100%;
+}
+
+.register-container {
+  display: flex;
+  min-height: 100vh;
+  background-image: url('/assets/images/beach.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+.left-section {
+  flex: 1; /* Take up half the width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0 24px;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.overlay h1 {
+  font-size: 3.5em;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #fff;
+}
+
+.overlay p {
+  font-size: 1.2em;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+.right-section {
+  flex: 1; /* Take up half the width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  animation: slideIn 1.5s ease-in-out; /* Add animation to the right section */
+}
+
+.register-card {
+  width: 400px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  margin: 24px 0; /* Add top and bottom margin */
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.radio-group {
+  margin-bottom: 20px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.2em;
+  background: linear-gradient(135deg, #ff9800, #f44336);
+  color: white;
+}
+
+.continue-to-login {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.error-message p {
+  color: red;
+  font-size: 0.9em;
+  margin: 5px 0;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

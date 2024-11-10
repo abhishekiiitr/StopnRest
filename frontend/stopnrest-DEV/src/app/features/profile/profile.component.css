@@ -1,0 +1,208 @@
+/* Container for the entire profile page */
+.profile-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background-color: #f9f9f9; /* Softer background */
+  color: #444; /* Lighter text color */
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 260px;
+  background-color: #ffffff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ /* box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);  Slightly larger shadow */
+  transition: width 0.3s ease-in-out;
+  z-index: 10;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Open Sans', sans-serif;
+}
+
+.sidebar:hover {
+  width: 280px;
+}
+
+/* Profile picture container inside sidebar */
+.profile-pic-container {
+  margin-bottom: 25px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.sidebar:hover .profile-pic-container {
+  transform: scale(1.05); /* Slight scale instead of aggressive */
+}
+
+/* Profile picture styling */
+.profile-pic {
+  border-radius: 50%;
+  width: 140px; /* Slightly smaller for a balanced look */
+  height: 140px;
+  object-fit: cover;
+  border: 4px #111111; /* Blue border to match theme */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar Menu Buttons */
+.sidebar-menu button {
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: white;
+  color: rgb(22, 21, 21);
+  padding: 10px; /* Reduced padding for better layout */
+  border: none;
+  font-weight: bold;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px; /* Added letter spacing */
+}
+
+.sidebar-menu button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px); /* Softer hover effect */
+}
+
+/* Main content area */
+.main-content {
+  flex: 1;
+  padding: 40px;
+  background-color: #ffffff;
+  border-left: 1px solid #e0e0e0; /* Lighter border */
+  color: #333;
+  overflow-y: auto;
+  animation: slideIn 0.6s ease-in-out;
+}
+
+/* Headings in the main content area */
+.main-content h2 {
+  margin-bottom: 20px;
+  color: #141414;
+  text-transform: uppercase;
+  font-size: 1.8em;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.main-content h2::after {
+  content: '';
+  width: 100px;
+  height: 4px;
+  background-color: #050505;
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+}
+
+/* Paragraph text styling */
+.main-content p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Form field container styling */
+mat-form-field {
+  width: 100%;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+/* Label for form fields */
+mat-label {
+  color: #555;
+}
+
+/* Error message in form fields */
+mat-error {
+  color: #e74c3c; /* Red color for errors */
+}
+
+/* Submit and cancel button styles */
+button[mat-raised-button] {
+  background-color: #28a745;
+  color: white;
+  margin-right: 10px;
+  padding: 10px 25px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[mat-raised-button]:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+/* Profile image preview after upload */
+img {
+  border-radius: 10px;
+  margin-top: 10px;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Password form field container */
+.password-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+  .profile-container {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    padding: 10px;
+    box-shadow: none;
+  }
+  
+  .main-content {
+    padding: 20px;
+    border-left: none;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.edit-icon {
+  cursor: pointer;          /* Show pointer cursor on hover */
+  font-size: 30px;          /* Adjust size of the icon */
+  color: #007bff;           /* Set the icon color (blue in this case) */
+  transition: color 0.3s ease; /* Smooth color change on hover */
+}
+
+.edit-icon:hover {
+  color: #0056b3; 
+            /* Darker blue on hover */
+}

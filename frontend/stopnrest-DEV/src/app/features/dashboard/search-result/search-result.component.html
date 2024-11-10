@@ -1,0 +1,48 @@
+  <div *ngIf="!isSearched" class="search-result-container">
+    <div *ngIf="hotels.length === 0">
+      <p class="empty-result">No hotels found for the selected criteria.</p>
+    </div>
+    <div class="hotel-card" *ngFor="let hotel of hotels">
+      <div class="image-container">
+        <img [src]="hotel.images[0]" alt="{{ hotel.name }}" class="hotel-image" />
+      </div>
+      <div class="hotel-details">
+        <h3 class="hotel-name">{{ hotel.name }}</h3>
+        <p><strong>Location:</strong> {{ hotel.location.city }}</p>
+        <!-- <p><strong>Rating:</strong> {{ getAverageRating(hotel.ratings) | number:'1.1-1' }} ★</p> -->
+        <p><strong>Price:</strong> {{ getLowestPrice(hotel.roomTypes) | currency:'INR' }} per night</p>
+        <p *ngIf="isDatesProvided"><strong>Available Rooms:</strong> {{ hotel.total_room }}</p>
+        <button class="book-now-button" (click)="onBookNow()">Book Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="isSearched" class="search-result-container">
+    <div *ngIf="hotelSearch.length === 0">
+      <p class="empty-result">No hotels found for the selected criteria.</p>
+    </div>
+    <div class="hotel-card" *ngFor="let hotel of hotelSearch">
+      <div class="image-container">
+        <img [src]="hotel.images[0]" alt="{{ hotel.hotelName }}" class="hotel-image" />
+      </div>
+      <div class="hotel-details">
+        <h3 class="hotel-name">{{ hotel.hotelName }}</h3>
+        <p><strong>Location:</strong> {{ hotel.city }}</p>
+
+        <!-- Conditionally show DOUBLE room availability -->
+        <ng-container *ngIf="hotel.roomAvailability.DOUBLE">
+          <p><strong>Double Room Available:</strong> {{ hotel.roomAvailability.DOUBLE.availableCount }}</p>
+          <p><strong>Room Price:</strong> {{ hotel.roomAvailability.DOUBLE.pricePerNight | currency:'INR' }} per night</p>
+        </ng-container>
+
+        <!-- Conditionally show SINGLE room availability -->
+        <ng-container *ngIf="hotel.roomAvailability.SINGLE">
+          <p><strong>Single Room Available:</strong> {{ hotel.roomAvailability.SINGLE.availableCount }}</p>
+          <p><strong>Room Price:</strong> {{ hotel.roomAvailability.SINGLE.pricePerNight | currency:'INR' }} per night</p>
+        </ng-container>
+
+        <!-- Book Now button -->
+        <button class="book-now-button" (click)="openBookingDialog(hotel)">Book Now</button>
+      </div>
+    </div>
+  </div>

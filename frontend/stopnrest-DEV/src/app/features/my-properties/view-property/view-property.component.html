@@ -1,0 +1,62 @@
+<div class="view-properties-container">
+  <div class="view-header">
+    <button (click)="onBack()" class="back-button">
+      <i class="fa fa-arrow-left"></i> Back
+    </button>
+    <span class="hotel-id">Hotel ID: {{ hotel?.hotel_id }}</span>
+    <button *ngIf="!isEditing" (click)="enableEditMode()" class="edit-button">
+      <i class="fa fa-pencil"></i> Edit
+    </button>
+  </div>
+
+  <div *ngIf="hotel" class="property-details">
+    <div *ngIf="!isEditing">
+      <h3 class="hotel-name">{{ hotel.name }}</h3>
+      <p class="hotel-location">Location: {{ hotel.location.city }}</p>
+      <p class="hotel-description">Description: {{ hotel.description }}</p>
+
+      <div *ngFor="let roomType of hotel.roomTypes" class="room-type">
+        <h4 class="room-category">{{ roomType.roomCategory }} Room Details</h4>
+        <p>Total Rooms: {{ roomType.totalRooms }}</p>
+        <p>Price Per Room: {{ roomType.pricePerRoom }}</p>
+        <p>Amenities: {{ roomType.amenities.join(', ') }}</p>
+      </div>
+    </div>
+
+    <div *ngIf="isEditing">
+      <form (ngSubmit)="saveChanges()" class="edit-form">
+        <div class="form-group">
+          <label for="propertyName">Property Name</label>
+          <input type="text" id="propertyName" [(ngModel)]="hotel.name" name="propertyName" required>
+        </div>
+
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" id="location" [(ngModel)]="hotel.location.city" name="location" required>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input type="text" id="description" [(ngModel)]="hotel.description" name="description" required>
+        </div>
+
+        <!-- Room Type Details -->
+        <div *ngFor="let roomType of hotel.roomTypes" class="room-type-edit">
+          <h4>{{ roomType.roomCategory }} Room Details</h4>
+          <div class="form-group">
+            <label for="totalRooms">Total Rooms</label>
+            <input type="number" [(ngModel)]="roomType.totalRooms" name="totalRooms" required>
+          </div>
+          <div class="form-group">
+            <label for="pricePerRoom">Price Per Room</label>
+            <input type="number" [(ngModel)]="roomType.pricePerRoom" name="pricePerRoom" required>
+          </div>
+        </div>
+        <div class="button-container">
+          <button type="submit" class="btn-update">Update</button>
+          <button type="button" (click)="toggleEdit()" class="btn-discard">Discard</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

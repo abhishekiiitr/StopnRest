@@ -1,0 +1,77 @@
+<div class="profile-container">
+  <div class="sidebar">
+    <div class="profile-pic-container">
+      <img *ngIf="userInfo.profilePic; else placeholder" [src]="userInfo.profilePic" alt="Profile Picture" class="profile-pic">
+      <ng-template #placeholder>
+        <img src="../assets/profile.jpg" alt="Placeholder Picture" class="profile-pic">
+      </ng-template>
+    </div>
+    <div class="sidebar-menu">
+      <button mat-button (click)="toggleEdit()">Profile Info</button>
+      <button mat-button (click)="toggleChangePassword()">Change Password</button>
+      <button mat-button (click)="logout()">Logout</button>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <!-- Display profile info -->
+    <div *ngIf="!editMode && !changePasswordMode">
+      <h2>Profile Information</h2>
+      <p><strong>Username:</strong> {{ userInfo.userName }}</p>
+      <p><strong>Contact:</strong> {{ userInfo.contact }}</p>
+      <p><strong>Email:</strong> {{ userInfo.email }}</p>
+      <i class="fa-solid fa-pen-to-square edit-icon"  matTooltip="Edit Profile"(click)="toggleEdit()"  ></i>
+    </div>
+
+    <!-- Edit profile form -->
+    <div *ngIf="editMode">
+      <h2>Edit Profile</h2>
+      <form (ngSubmit)="saveChanges()">
+        <mat-form-field appearance="fill">
+          <mat-label>Username</mat-label>
+          <input [(ngModel)]="profileInfo.userName" name="userName" matInput required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Contact</mat-label>
+          <input [(ngModel)]="profileInfo.contact" name="contact" matInput required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input [(ngModel)]="profileInfo.email" name="email" matInput required email>
+        </mat-form-field>
+
+        <!-- Profile picture upload -->
+        <div class="file-input">
+          <label>Profile Picture</label>
+          <input type="file" (change)="uploadImg($event)">
+        </div>
+
+        <img *ngIf="profileInfo.profilePic" [src]="profileInfo.profilePic" width="100px" alt="Profile Picture Preview">
+
+        <button mat-raised-button color="primary" type="submit">Save Changes</button>
+        <button mat-button (click)="toggleEdit()">Cancel</button>
+      </form>
+    </div>
+
+    <!-- Change password form -->
+    <div *ngIf="changePasswordMode">
+      <h2>Change Password</h2>
+      <form (ngSubmit)="changePassword()">
+        <mat-form-field appearance="fill">
+          <mat-label>New Password</mat-label>
+          <input type="password" [(ngModel)]="passwordInfo.newPassword" name="newPassword" matInput required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Confirm Password</mat-label>
+          <input type="password" [(ngModel)]="passwordInfo.confirmPassword" name="confirmPassword" matInput required>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit">Change Password</button>
+        <button mat-button (click)="toggleChangePassword()">Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>

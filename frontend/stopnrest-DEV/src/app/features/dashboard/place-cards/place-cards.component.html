@@ -1,0 +1,21 @@
+<div class="explore-container">
+  <h2>Explore India</h2>
+
+  <!-- Navigation Buttons -->
+  <div class="nav-buttons">
+    <button class="nav-button left" (click)="scrollLeft()">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button class="nav-button right" (click)="scrollRight()">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+
+  <!-- Cards for Places -->
+  <div class="places-grid" #placesGrid (wheel)="onScroll($event)">
+    <div *ngFor="let place of places" class="place-card" (click)="onPlaceClick(place.name)">
+      <img [src]="place.imageUrl" alt="{{ place.name }}" />
+      <div class="place-name">{{ place.name }}</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,102 @@
+<!-- <div class="create-new-container"> -->
+<h2>Create New Property</h2>
+<form (submit)="onSubmit()">
+<div class="properties">
+<div class="form-group">
+<label for="propertyName">Property Name</label>
+<input type="text" id="propertyName" [(ngModel)]="propertyName" name="propertyName" required>
+</div>
+ 
+      <div class="form-group">
+<label for="city">City</label>
+<select id="city" [(ngModel)]="Location.city" name="city" required>
+<option value="">Select City</option>
+<option value="Delhi">Delhi</option>
+<option value="Bengaluru">Bengaluru</option>
+<option value="Goa">Goa</option>
+<option value="Chennai">Chennai</option>
+<option value="Kolkata">Kolkata</option>
+<option value="Mumbai">Mumbai</option>
+</select>
+</div>
+<div class="form-group">
+<label for="address">Address (Street)</label>
+<input type="text" id="address" [(ngModel)]="address" name="address" required>
+</div>
+ 
+      <div class="form-group">
+<label for="RoomDescription">Room Description</label>
+<input type="text" id="RoomDescription" [(ngModel)]="description" name="description" required>
+</div>
+ 
+      <!-- Hotel Images Input -->
+<div class="form-group">
+<label for="hotelImages">Select Hotel Images</label>
+<input type="file" id="hotelImages" (change)="onHotelImagesSelected($event)" multiple>
+</div>
+</div>
+ 
+    <!-- Room Details for Single Bed Rooms -->
+<div class="room single-room">
+<h3>Single Bed Room Details</h3>
+<div class="form-group">
+<label for="singleBedRooms">Number of Single Bed Rooms</label>
+<input type="number" id="singleBedRooms" [(ngModel)]="singleBedRooms" name="singleBedRooms" min="0" required>
+</div>
+ 
+      <div class="form-group">
+<label for="singleRoomPrice">Price (per night for Single Bed Room)</label>
+<input id="singleRoomPrice" [(ngModel)]="singleRoomPrice" name="singleRoomPrice" min="0" step="0.01" required>
+</div>
+ 
+      <div class="form-group">
+<label for="singleAmenities">Select Amenities</label>
+<div class="amenities-options">
+<label><input type="checkbox" [(ngModel)]="singleRoomWifi" (change)="updateSingleAmenities()" name="singleRoomWifi"> Wi-Fi</label>
+<label><input type="checkbox" [(ngModel)]="singleRoomAc" (change)="updateSingleAmenities()" name="singleRoomAc"> A/C</label>
+<label><input type="checkbox" [(ngModel)]="singleRoomBf" (change)="updateSingleAmenities()" name="singleRoomBf"> 24x7 Room Service</label>
+<label><input type="checkbox" [(ngModel)]="singleRoomPool" (change)="updateSingleAmenities()" name="singleRoomPool"> Swimming Pool</label>
+</div>
+</div>
+ 
+      <!-- Single Room Images Input -->
+<div class="form-group">
+<label for="singleRoomImages">Select Single Room Images</label>
+<input type="file" id="singleRoomImages" (change)="onSingleRoomImagesSelected($event)" multiple>
+</div>
+</div>
+ 
+    <!-- Room Details for Double Bed Rooms -->
+<div class="room double-room">
+<h3>Double Bed Room Details</h3>
+<div class="form-group">
+<label for="doubleBedRooms">Number of Double Bed Rooms</label>
+<input type="number" id="doubleBedRooms" [(ngModel)]="doubleBedRooms" name="doubleBedRooms" min="0" required>
+</div>
+ 
+      <div class="form-group">
+<label for="doubleRoomPrice">Price (per night for Double Bed Room)</label>
+<input id="doubleRoomPrice" [(ngModel)]="doubleRoomPrice" name="doubleRoomPrice" min="0" step="0.01" required>
+</div>
+ 
+      <div class="form-group">
+<label for="doubleAmenities">Select Amenities for Double Room</label>
+<div class="amenities-options">
+<label><input type="checkbox" [(ngModel)]="doubleRoomWifi" (change)="updateDoubleAmenities()" name="doubleRoomWifi"> Wi-Fi</label>
+<label><input type="checkbox" [(ngModel)]="doubleRoomAc" (change)="updateDoubleAmenities()" name="doubleRoomAc"> A/C</label>
+<label><input type="checkbox" [(ngModel)]="doubleRoomBf" (change)="updateDoubleAmenities()" name="doubleRoomBf"> Spa</label>
+<label><input type="checkbox" [(ngModel)]="doubleRoomPool" (change)="updateDoubleAmenities()" name="doubleRoomPool"> Gym</label>
+</div>
+</div>
+ 
+      <!-- Double Room Images Input -->
+<div class="form-group">
+<label for="doubleRoomImages">Select Double Room Images</label>
+<input type="file" id="doubleRoomImages" (change)="onDoubleRoomImagesSelected($event)" multiple>
+</div>
+</div>
+ 
+    <!-- Submit Button -->
+<button type="submit" class="btn-submit">Submit</button>
+</form>
+<!-- </div> -->

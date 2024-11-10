@@ -1,0 +1,19 @@
+<div class="dashboard-container">
+    <h2 style="text-align: center;">Welcome to Stop N Rest!!!</h2>
+    <app-search (searchCriteria)="onSearch($event)" [location]="selectedPlace"></app-search>
+    <br>
+    <app-search-result *ngIf="showSearchResult" 
+      [hotels]="hotels"
+      [hotelSearch]="responseHotel"
+      [location]="selectedPlace"
+      [checkIn]="searchParams?.checkIn"
+      [checkOut]="searchParams?.checkOut"
+      [isDatesProvided]="isDatesProvided"
+      [isSearched]="isSearched"
+      >
+    </app-search-result>
+    
+    <app-place (placeSelected)="onPlaceSelected($event)"></app-place>
+    
+    <app-footer></app-footer>
+  </div>

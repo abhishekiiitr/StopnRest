@@ -1,0 +1,46 @@
+<h2 mat-dialog-title class="dialog-title">Booking Details</h2>
+<mat-dialog-content class="dialog-content">
+
+  <!-- Hotel Details Section -->
+  <div class="hotel-details">
+    <h3>{{ data.hotel.hotelName }}</h3>
+    <p>Category: {{ data.roomCategory | titlecase }}</p>
+    <p>Available: {{ getAvailableRooms(data.hotel, data.roomCategory) }} rooms</p>
+  </div>
+
+  <!-- Price Section -->
+  <div class="price-section">
+    <span class="price-label">Nightly Rate:</span>
+    <span class="price-value">₹{{ getRoomPrice(data.hotel, data.roomCategory) | number }}</span>
+  </div>
+
+  <!-- Number of Rooms Input -->
+  <mat-form-field class="dialog-input">
+    <mat-label>Rooms</mat-label>
+    <input matInput type="number" [(ngModel)]="numRooms" min="1" 
+           [max]="getAvailableRooms(data.hotel, data.roomCategory)"
+           (input)="updateTotalPrice()" />
+  </mat-form-field>
+
+  <!-- Total Amount Display -->
+  <div class="total-amount">
+    Payable for {{ numRooms }} Room(s): <span>₹{{ totalAmount | number }}</span>
+  </div>
+
+  <!-- User Name Input -->
+  <mat-form-field class="dialog-input">
+    <mat-label>Name</mat-label>
+    <input matInput type="text" [(ngModel)]="userName" />
+  </mat-form-field>
+
+  <!-- User Email Input -->
+  <mat-form-field class="dialog-input">
+    <mat-label>Email</mat-label>
+    <input matInput type="email" [(ngModel)]="userEmail" />
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions class="dialog-actions">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button color="primary" [disabled]="!isValid()" (click)="onConfirmBooking()">Confirm</button>
+</mat-dialog-actions>

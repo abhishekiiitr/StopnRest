@@ -1,0 +1,6 @@
+<mat-toolbar color="primary" class="navbar">
+    <div class="navbar-title">{{title}}</div>
+    <div class="navbar-subtitle">Feels like home - Your ultimate hotel management solution</div>
+    <div class="spacer"></div>
+    <button *ngIf="!isLoggedIn()" (click)="navigateToLogin()" class="login-button">Login</button>
+  </mat-toolbar>

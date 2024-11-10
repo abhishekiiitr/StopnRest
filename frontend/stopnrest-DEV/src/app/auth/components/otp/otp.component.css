@@ -1,0 +1,68 @@
+.background {
+    display: flex;
+    height: 100vh;
+    /* background-color: rgba(246, 173, 108, 0.4); */
+}
+
+.left-panel {
+    flex: 0.50;
+    background-image: url('src/assets/images/beach.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+img {
+    background-color: rgb(10, 89, 163);
+    width: 80px;
+    margin-left: 37%;
+    border-radius: 50%;
+}
+
+.right-panel {
+    flex: 0.50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: slide-in 0.5s ease forwards;
+    background-image: url('src/assets/images/beach.jpeg'); /* Apply animation */
+}
+
+.login-card {
+    display: flex;
+    width: 65%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.full-width {
+    width:100%;
+}
+
+.login-button {
+    margin-top: 20px;
+    width: 100%;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(100%); /* Start off-screen to the right */
+        opacity: 0; /* Start invisible */
+    }
+    to {
+        transform: translateX(0); /* End at the original position */
+        opacity: 1; /* End fully visible */
+    }
+}
+
+@media (max-width: 768px) {
+    .left-panel {
+        display: none;
+    }
+  
+    .right-panel {
+        flex: 100;
+    }
+}

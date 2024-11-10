@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="header">
+    <div class="left-header">
+      <button class="btn-create" (click)="onCreateNew()">+ Create New</button>
+    </div>
+    <h3>Manage Your Properties</h3>
+    <div class="right-header">
+      <p class="company-name">Stop&Rest</p>
+      <p>Property Management</p>
+    </div>
+  </div>
+
+  <div *ngIf="!selectedHotelId; else viewPropertySection">
+    <div class="property-list">
+      <div *ngFor="let hotel of properties" class="property-card">
+        <h4>{{ hotel.name }}</h4>
+        <p>{{ hotel.description }}</p>
+        <p>Category: <span style="color: #ff5722; font-weight: bold;">{{ getCategories(hotel) }}</span></p>
+        <p>Total Rooms: <span style="color: #4caf50; font-weight: bold;">{{ hotel.total_room }}</span></p>
+        <button class="view-button" (click)="onView(hotel.hotel_id)">View</button>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #viewPropertySection>
+    <app-view-property [hotelId]="selectedHotelId" (back)="onBack()"></app-view-property>
+  </ng-template>
+</div>

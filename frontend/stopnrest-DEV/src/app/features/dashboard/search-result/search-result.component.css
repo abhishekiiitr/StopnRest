@@ -1,0 +1,129 @@
+/* Container for the hotel cards */
+.search-result-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  max-height: 500px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.search-result-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual hotel card styling */
+.hotel-card {
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 280px;
+  height: 440px;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  backdrop-filter: blur(18px);
+  padding: 15px;
+}
+
+.hotel-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Container for the hotel image */
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+
+.hotel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* Image hover effect */
+.hotel-card:hover .hotel-image {
+  transform: scale(1.1);
+}
+
+/* Details section of the card */
+.hotel-details {
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Hotel name styling */
+.hotel-name {
+  font-size: 20px;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-weight: 700;
+  text-align: left;
+}
+
+/* Hotel detail paragraphs */
+.hotel-details p {
+  font-size: 14px;
+  color: #7f8c8d;
+  margin: 6px 0;
+  text-align: left;
+}
+
+/* Book Now button styling */
+.book-now-button {
+  background: linear-gradient(90deg, #28a745, #218838);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+}
+
+/* Book Now button hover effect */
+.book-now-button:hover {
+  background: linear-gradient(90deg, #218838, #1e7e34);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for when no results are found */
+.empty-result {
+  background-color: rgba(240, 240, 240, 0.8);
+  color: #444;
+  padding: 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .search-result-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hotel-card {
+    width: 90%; /* Full-width for smaller screens */
+  }
+}

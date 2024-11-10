@@ -1,0 +1,31 @@
+<mat-nav-list class="sidebar-container">
+    <img src="assets/logo.png" alt="Logo" class="sidebar-logo">
+    
+    <ng-container *ngIf="showTab('dashboard')">
+        <a mat-list-item [routerLink]="['/dashboard']" (click)="onNavigate('dashboard')" class="sidebar-tabs"
+            matTooltip="Dashboard" matTooltipClass="custom-tooltip">
+            <i class="fa-duotone fa-solid fa-house" id="my-icons"></i>
+        </a>
+    </ng-container>
+    
+    <ng-container *ngIf="showTab('bookings')">
+        <a mat-list-item [routerLink]="['/bookings']" (click)="onNavigate('bookings')" class="sidebar-tabs"
+            matTooltip="Bookings">
+            <i class="fa-duotone fa-solid fa-calendar-days" id="my-icons"></i>
+        </a>
+    </ng-container>
+    
+    <ng-container *ngIf="showTab('profile')">
+        <a mat-list-item [routerLink]="['/profile']" (click)="onNavigate('profile')" class="sidebar-tabs"
+            matTooltip="Profile">
+            <i class="fa-solid fa-user" id="my-icons"></i>
+        </a>
+    </ng-container>
+    
+    <ng-container *ngIf="showTab('my-properties')">
+        <a mat-list-item [routerLink]="['/my-properties']" (click)="onNavigate('my-properties')" class="sidebar-tabs"
+            matTooltip="My Properties">
+            <i id="my-icons" class="fa-solid fa-city"></i>
+        </a>
+    </ng-container>
+</mat-nav-list>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorites Added</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif; 
+            background-color: #f4f4f4; 
+            padding: 0; 
+            margin: 0; 
+        }
+        .container {
+            position: relative;
+            background: rgba(255, 255, 255, 0.9); /* Light background for content readability */
+            padding: 30px; 
+            border-radius: 5px; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2); 
+            border-top: 5px solid #007bff; /* Top border color */
+            z-index: 2; /* To ensure content appears above background images */
+        }
+        h1 { 
+            color: #007bff; /* Header color */
+            font-size: 24px; 
+            margin-bottom: 20px; 
+        }
+        p { 
+            font-size: 16px; 
+            color: #555; 
+        }
+        .social-icons img {
+            width: 30px; 
+            margin: 0 5px;
+        }
+        footer {
+            border-top: 1px solid #ccc; 
+            padding-top: 10px; 
+            margin-top: 20px; 
+            font-size: 12px; 
+            color: #777; 
+        }
+        footer a {
+            color: #007bff; 
+            text-decoration: none; 
+        }
+        /* Background images */
+        .bg-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 200px; /* Adjust as needed */
+            background-image: url('https://images.unsplash.com/photo-1570179538662-faa5e38e9d8f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fG5ld3MlMjBhcHB8ZW58MHx8MHx8fDA%3D');
+            background-size: cover;
+            background-position: center;
+            z-index: 1; /* Behind the content */
+        }
+        .bg-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 200px; /* Adjust as needed */
+            background-image: url('https://images.unsplash.com/photo-1613442301239-ea2478101ea7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bmV3cyUyMGFwcHxlbnwwfHwwfHx8MA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            z-index: 1; /* Behind the content */
+        }
+        .bg-middle {
+            background-image: url('https://images.unsplash.com/photo-1554731617-8eafa9975365?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG5ld3MlMjBhcHB8ZW58MHx8MHx8fDA%3D');
+            background-size: cover;
+            background-position: center;
+            height: 300px; /* Adjust height for the content area */
+            z-index: 0; /* Background image */
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-top"></div>
+    <div class="bg-middle"></div>
+    <div class="container">
+        <h1>Item Added to Favorites</h1>
+        <p>You have added <strong>${itemName}</strong> to your favorites.</p>
+        
+        <!-- Optional Middle Image -->
+        <img src="https://images.unsplash.com/photo-1590345213370-caf4f5515bc6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fG5ld3MlMjBhcHB8ZW58MHx8MHx8fDA%3D" alt="Favorites" class="img-fluid rounded mx-auto d-block" />
+
+        <p>If you experience any glitches, just reach out to our super-helpful customer support at <strong>080 - 47485490</strong></p>
+        
+        <footer>
+            <div class="social-icons text-center">
+                <a href="#"><img src="https://img.icons8.com/fluent/48/000000/facebook-new.png" alt="Facebook" /></a>
+                <a href="#"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" alt="Instagram" /></a>
+                <a href="#"><img src="https://img.icons8.com/fluent/48/000000/gmail-new.png" alt="Gmail" /></a>
+                <a href="#"><img src="https://img.icons8.com/fluent/48/000000/twitter.png" alt="Twitter" /></a>
+            </div>
+            <p>© 2024 epiFi Technologies Pvt. Ltd. All rights reserved</p>
+            <p>Prefer not to receive such messages occasionally? <a href="#">Unsubscribe</a></p>
+            <p><a href="#">Terms and Conditions</a> • <a href="#">Privacy Policy</a></p>
+        </footer>
+    </div>
+    <div class="bg-bottom"></div>
+
+    <!-- Bootstrap JS and dependencies (optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

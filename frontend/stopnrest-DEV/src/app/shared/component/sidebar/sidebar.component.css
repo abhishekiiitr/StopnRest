@@ -1,0 +1,61 @@
+/* Sidebar Logo Styling */
+.sidebar-logo {
+    display: block;
+    height: 70px;
+    width: 70px;
+    margin: 0 auto;
+}
+
+/* Sidebar Icon Styling */
+.sidebar-icon {
+    height: 30px;
+    width: 30px;
+    color: rgb(0, 150, 136);
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+/* Sidebar Tab Styling */
+.sidebar-tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+    margin-bottom: 20px;
+    padding: 10px 0;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 8px;
+}
+
+/* Hover State for Tabs */
+.sidebar-tabs:hover {
+    background-color: rgba(0, 150, 136, 0.1);
+    color: rgb(0, 150, 136);
+}
+
+/* Active Tab State */
+.sidebar-tabs.active {
+    background-color: rgba(2, 6, 224, 0.2);
+    color: rgb(0, 150, 136);
+}
+
+/* Sidebar Container (Mat-Nav-List) */
+mat-nav-list {
+    padding: 0;
+    background-color: #fff; 
+    height: 100vh;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+#my-icons{
+    font-size: 26px;
+    color: #2BEBDE;
+    display: block;
+    margin-left:auto;
+    margin-bottom: 20px;
+
+}

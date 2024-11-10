@@ -1,0 +1,36 @@
+<div class="login-container">
+  <div class="left-section">
+    <div class="overlay">
+      <h1>Discover the Future of Travel</h1>
+      <p>Book your stay at any hotel with ease and convenience.</p>
+      <p>Join thousands of travelers who enjoy hassle-free booking through our platform.</p>
+      <p>Join the future of travel planning. Book your perfect stay in just a few clicks and experience seamless travel like never before. Whether you're a customer looking for a hassle-free booking experience or a hotel owner wanting to reach more travelers, we've got you covered.</p>
+    </div>
+  </div>
+
+  <div class="right-section">
+    <div class="overlay1">
+      <mat-card class="login-card">
+        <form (ngSubmit)="login()">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Enter your email" [(ngModel)]="credentials.email" name="email" required>
+            <mat-error *ngIf="!credentials.email?.trim()">Email is required</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Enter your password" [(ngModel)]="credentials.password" name="password" type="password" required>
+            <mat-error *ngIf="!credentials.password?.trim()">Password is required</mat-error>
+          </mat-form-field>
+
+          <button type="submit" mat-raised-button color="primary" class="submit-btn">Login</button>
+
+          <div class="links">
+            <a (click)="navigateToRegister()">Sign Up</a> |<a (click)="navigateToForgotPassword()">Forgot Password</a>
+          </div>
+        </form>
+      </mat-card>
+    </div>
+  </div>
+</div>

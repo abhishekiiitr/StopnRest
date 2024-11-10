@@ -1,0 +1,117 @@
+.explore-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 80vw;
+  margin: 40px auto;
+  overflow: hidden;
+  position: relative;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: calc(100% - 60px);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  justify-content: space-between;
+}
+
+.nav-button {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  margin: 0 10px;
+}
+
+.nav-button:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.places-grid {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.places-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.place-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s;
+  min-width: 220px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.place-card:hover {
+  transform: scale(1.05);
+}
+
+.place-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.place-name {
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Lucida Sans', 'Lucida Grande', sans-serif;
+  color: #555;
+  font-size: 1.1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .explore-container {
+    max-width: 95vw;
+  }
+
+  .nav-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .place-card {
+    min-width: 180px;
+  }
+
+  .place-name {
+    font-size: 1rem;
+  }
+}
